@@ -1,0 +1,210 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Loop Control</h1> 
+    <div class="clearer"></div> 
+    <p>JavaScript provides full control to handle loops and switch statements. There may be a situation when you need to come out of a loop without reaching its bottom. There may also be a situation when you want to skip a part of your code block and start the next iteration of the loop.</p> 
+    <p>To handle all such situations, JavaScript provides <b>break</b> and <b>continue</b> statements. These statements are used to immediately come out of any loop or to start the next iteration of any loop respectively.</p> 
+    <h2>The break Statement</h2> 
+    <p>The <b>break</b> statement, which was briefly introduced with the <i>switch</i> statement, is used to exit a loop early, breaking out of the enclosing curly braces.</p> 
+    <h3>Flow Chart</h3> 
+    <p>The flow chart of a break statement would look as follows −</p> 
+    <img src="images/break_statement.jpg" alt="Break Statement"> 
+    <h3>Example</h3> 
+    <p>The following example illustrates the use of a <b>break</b> statement with a while loop. Notice how the loop breaks out early once <b>x</b> reaches 5 and reaches to <b>document.write (..)</b> statement just below to the closing curly brace −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+         var x = 1;
+         document.write("Entering the loop&lt;br /&gt; ");
+         
+         while (x &lt; 20)
+         {
+            if (x == 5){
+               break; // breaks out of loop completely
+            }
+            x = x + 1;
+            document.write( x + "&lt;br /&gt;");
+         }
+         
+         document.write("Exiting the loop!&lt;br /&gt; ");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Entering the loop
+2
+3
+4
+5
+Exiting the loop!
+Set the variable to different value and then try...
+</pre> 
+    <p>We already have seen the usage of <b>break</b> statement inside <b>a switch</b> statement.</p> 
+    <h2>The continue Statement</h2> 
+    <p>The <b>continue</b> statement tells the interpreter to immediately start the next iteration of the loop and skip the remaining code block. When a <b>continue</b> statement is encountered, the program flow moves to the loop check expression immediately and if the condition remains true, then it starts the next iteration, otherwise the control comes out of the loop.</p> 
+    <h3>Example</h3> 
+    <p>This example illustrates the use of a <b>continue</b> statement with a while loop. Notice how the <b>continue</b> statement is used to skip printing when the index held in variable <b>x</b> reaches 5 −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var x = 1;
+            document.write("Entering the loop&lt;br /&gt; ");
+         
+            while (x &lt; 10)
+            {
+               x = x + 1;
+               
+               if (x == 5){
+                  continue; // skip rest of the loop body
+               }
+               document.write( x + "&lt;br /&gt;");
+            }
+         
+            document.write("Exiting the loop!&lt;br /&gt; ");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Entering the loop
+2
+3
+4
+6
+7
+8
+9
+10
+Exiting the loop!
+</pre> 
+    <h2>Using Labels to Control the Flow</h2> 
+    <p>Starting from JavaScript 1.2, a label can be used with <b>break</b> and <b>continue</b> to control the flow more precisely. A <b>label</b> is simply an identifier followed by a colon (:) that is applied to a statement or a block of code. We will see two different examples to understand how to use labels with break and continue.</p> 
+    <p><b>Note</b> − Line breaks are not allowed between the <b>‘continue’</b> or <b>‘break’</b> statement and its label name. Also, there should not be any other statement in between a label name and associated loop.</p> 
+    <p>Try the following two examples for a better understanding of Labels.</p> 
+    <h3>Example 1</h3> 
+    <p>The following example shows how to implement Label with a break statement.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            document.write("Entering the loop!&lt;br /&gt; ");
+            outerloop: // This is the label name
+         
+            for (var i = 0; i &lt; 5; i++)
+            {
+               document.write("Outerloop: " + i + "&lt;br /&gt;");
+               innerloop:
+               for (var j = 0; j &lt; 5; j++)
+               {
+                  if (j &gt; 3 ) break ; // Quit the innermost loop
+                  if (i == 2) break innerloop; // Do the same thing
+                  if (i == 4) break outerloop; // Quit the outer loop
+                  document.write("Innerloop: " + j + " &lt;br /&gt;");
+               }
+            }
+         
+            document.write("Exiting the loop!&lt;br /&gt; ");
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Entering the loop!
+Outerloop: 0
+Innerloop: 0 
+Innerloop: 1 
+Innerloop: 2 
+Innerloop: 3 
+Outerloop: 1
+Innerloop: 0 
+Innerloop: 1 
+Innerloop: 2 
+Innerloop: 3 
+Outerloop: 2
+Outerloop: 3
+Innerloop: 0 
+Innerloop: 1 
+Innerloop: 2 
+Innerloop: 3 
+Outerloop: 4
+Exiting the loop!
+</pre> 
+    <h3>Example 2</h3> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+         document.write("Entering the loop!&lt;br /&gt; ");
+         outerloop: // This is the label name
+         
+         for (var i = 0; i &lt; 3; i++)
+         {
+            document.write("Outerloop: " + i + "&lt;br /&gt;");
+            for (var j = 0; j &lt; 5; j++)
+            {
+               if (j == 3){
+                  continue outerloop;
+               }
+               document.write("Innerloop: " + j + "&lt;br /&gt;");
+            }
+         }
+         
+         document.write("Exiting the loop!&lt;br /&gt; ");
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Entering the loop!
+Outerloop: 0
+Innerloop: 0
+Innerloop: 1
+Innerloop: 2
+Outerloop: 1
+Innerloop: 0
+Innerloop: 1
+Innerloop: 2
+Outerloop: 2
+Innerloop: 0
+Innerloop: 1
+Innerloop: 2
+Exiting the loop!
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

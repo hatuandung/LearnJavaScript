@@ -1,0 +1,110 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Void Keyword</h1> 
+    <div class="clearer"></div> 
+    <p><b>void</b> is an important keyword in JavaScript which can be used as a unary operator that appears before its single operand, which may be of any type. This operator specifies an expression to be evaluated without returning a value.</p> 
+    <h2>Syntax</h2> 
+    <p>The syntax of <b>void</b> can be either of the following two −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;head&gt;
+
+   &lt;script type="text/javascript"&gt;
+      &lt;!--
+         void func()
+         javascript:void func()
+      
+         or:
+      
+         void(func())
+         javascript:void(func())
+      //--&gt;
+   &lt;/script&gt;
+   
+&lt;/head&gt;
+</pre> 
+    <h3>Example 1</h3> 
+    <p>The most common use of this operator is in a client-side <i>javascript:</i> URL, where it allows you to evaluate an expression for its side-effects without the browser displaying the value of the evaluated expression.</p> 
+    <p>Here the expression <b>alert ('Warning!!!')</b> is evaluated but it is not loaded back into the current document −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;p&gt;Click the following, This won't react at all...&lt;/p&gt;
+      &lt;a href="javascript:void(alert('Warning!!!'))"&gt;Click me!&lt;/a&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h3>Example 2</h3> 
+    <p>Take a look at the following example. The following link does nothing because the expression "0" has no effect in JavaScript. Here the expression "0" is evaluated, but it is not loaded back into the current document.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;p&gt;Click the following, This won't react at all...&lt;/p&gt;
+      &lt;a href="javascript:void(0)"&gt;Click me!&lt;/a&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h3>Example 3</h3> 
+    <p>Another use of <b>void</b> is to purposely generate the <b>undefined</b> value as follows.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function getValue(){
+               var a,b,c;
+               
+               a = void ( b = 5, c = 7 );
+               document.write('a = ' + a + ' b = ' + b +' c = ' + c );
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="getValue();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

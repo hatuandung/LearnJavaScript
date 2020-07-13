@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.htd.learnjavascript.Chapter" />
+
+        <variable
+            name="listener"
+            type="com.htd.learnjavascript.ChapterAdapter.ChapterItemClickListener" />
+    </data>
+    <LinearLayout
+        android:onClick="@{v -> listener.onItemClickListener(item)}"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#fff"
+                android:text="@{item.id + ``}"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/custom_textview_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@{item.title}"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#000"/>
+    </LinearLayout>
+
+</layout>

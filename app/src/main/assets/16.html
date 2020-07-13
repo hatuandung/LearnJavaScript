@@ -1,0 +1,111 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Page Redirection</h1> 
+    <div class="clearer"></div> 
+    <h2>What is Page Redirection ?</h2> 
+    <p>You might have encountered a situation where you clicked a URL to reach a page X but internally you were directed to another page Y. It happens due to <b>page redirection</b>. This concept is different from <a title="JavaScript Page Refresh">JavaScript Page Refresh</a>.</p> 
+    <p>There could be various reasons why you would like to redirect a user from the original page. We are listing down a few of the reasons −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>You did not like the name of your domain and you are moving to a new one. In such a scenario, you may want to direct all your visitors to the new site. Here you can maintain your old domain but put a single page with a page redirection such that all your old domain visitors can come to your new domain.</p></li> 
+     <li><p>You have built-up various pages based on browser versions or their names or may be based on different countries, then instead of using your server-side page redirection, you can use client-side page redirection to land your users on the appropriate page.</p></li> 
+     <li><p>The Search Engines may have already indexed your pages. But while moving to another domain, you would not like to lose your visitors coming through search engines. So you can use client-side page redirection. But keep in mind this should not be done to fool the search engine, it could lead your site to get banned.</p></li> 
+    </ul> 
+    <h2>How Page Re-direction Works ?</h2> 
+    <p>The implementations of Page-Redirection are as follows.</p> 
+    <h3>Example 1</h3> 
+    <p>It is quite simple to do a page redirect using JavaScript at client side. To redirect your site visitors to a new page, you just need to add a line in your head section as follows.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function Redirect() {
+               window.location="http://www.tutorialspoint.com";
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following button, you will be redirected to home page.&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Redirect Me" onclick="Redirect();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h3>Example 2</h3> 
+    <p>You can show an appropriate message to your site visitors before redirecting them to a new page. This would need a bit time delay to load a new page. The following example shows how to implement the same. Here setTimeout() is a built-in JavaScript function which can be used to execute another function after a given time interval.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function Redirect() {
+               window.location="http://www.tutorialspoint.com";
+            }
+            
+            document.write("You will be redirected to main page in 10 sec.");
+            setTimeout('Redirect()', 10000);
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+You will be redirected to tutorialspoint.com main page in 10 seconds!
+</pre> 
+    <h3>Example 3</h3> 
+    <p>The following example shows how to redirect your site visitors onto a different page based on their browsers.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var browsername=navigator.appName;
+            if( browsername == "Netscape" )
+            {
+               window.location="http://www.location.com/ns.htm";
+            }
+            else if ( browsername =="Microsoft Internet Explorer")
+            {
+               window.location="http://www.location.com/ie.htm";
+            }
+            else
+            {
+               window.location="http://www.location.com/other.htm";
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

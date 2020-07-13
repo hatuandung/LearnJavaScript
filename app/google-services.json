@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "842503495133",
+    "firebase_url": "https://learn-javascript-ffc7c.firebaseio.com",
+    "project_id": "learn-javascript-ffc7c",
+    "storage_bucket": "learn-javascript-ffc7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842503495133:android:1f8618f272f66ffdd2aa34",
+        "android_client_info": {
+          "package_name": "com.htd.learnjavascript"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842503495133-eve65v37ehq0nch50mdub4jotnv1ql4r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE3TsqKYoFRbgi-snjZVaetAL7Es02Z3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842503495133-eve65v37ehq0nch50mdub4jotnv1ql4r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

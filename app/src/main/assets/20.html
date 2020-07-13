@@ -1,0 +1,225 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Objects Overview</h1> 
+    <div class="clearer"></div> 
+    <p>JavaScript is an Object Oriented Programming (OOP) language. A programming language can be called object-oriented if it provides four basic capabilities to developers −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><b>Encapsulation</b> − the capability to store related information, whether data or methods, together in an object.</p></li> 
+     <li><p><b>Aggregation</b> − the capability to store one object inside another object.</p></li> 
+     <li><p><b>Inheritance</b> − the capability of a class to rely upon another class (or number of classes) for some of its properties and methods.</p></li> 
+     <li><p><b>Polymorphism</b> − the capability to write one function or method that works in a variety of different ways.</p></li> 
+    </ul> 
+    <p>Objects are composed of attributes. If an attribute contains a function, it is considered to be a method of the object, otherwise the attribute is considered a property.</p> 
+    <h2>Object Properties</h2> 
+    <p>Object properties can be any of the three primitive data types, or any of the abstract data types, such as another object. Object properties are usually variables that are used internally in the object's methods, but can also be globally visible variables that are used throughout the page.</p> 
+    <p>The syntax for adding a property to an object is −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+objectName.objectProperty = propertyValue;
+</pre> 
+    <p><b>For example</b> − The following code gets the document title using the <b>"title"</b> property of the <b>document</b> object.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+var str = document.title;
+</pre> 
+    <h2>Object Methods</h2> 
+    <p>Methods are the functions that let the object do something or let something be done to it. There is a small difference between a function and a method – at a function is a standalone unit of statements and a method is attached to an object and can be referenced by the <b>this</b> keyword.</p> 
+    <p>Methods are useful for everything from displaying the contents of the object to the screen to performing complex mathematical operations on a group of local properties and parameters.</p> 
+    <p><b>For example</b> − Following is a simple example to show how to use the <b>write()</b> method of document object to write any content on the document.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+document.write("This is test");
+</pre> 
+    <h2>User-Defined Objects</h2> 
+    <p>All user-defined objects and built-in objects are descendants of an object called <b>Object</b>.</p> 
+    <h3>The new Operator</h3> 
+    <p>The <b>new</b> operator is used to create an instance of an object. To create an object, the <b>new</b> operator is followed by the constructor method.</p> 
+    <p>In the following example, the constructor methods are Object(), Array(), and Date(). These constructors are built-in JavaScript functions.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+var employee = new Object();
+var books = new Array("C++", "Perl", "Java");
+var day = new Date("August 15, 1947");
+</pre> 
+    <h3>The Object() Constructor</h3> 
+    <p>A constructor is a function that creates and initializes an object. JavaScript provides a special constructor function called <b>Object()</b> to build the object. The return value of the <b>Object()</b> constructor is assigned to a variable.</p> 
+    <p>The variable contains a reference to the new object. The properties assigned to the object are not variables and are not defined with the <b>var</b> keyword.</p> 
+    <h3>Example 1</h3> 
+    <p>Try the following example; it demonstrates how to create an Object.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;User-defined objects&lt;/title&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         var book = new Object();   // Create the object
+         book.subject = "Perl"; // Assign properties to the object
+         book.author  = "Mohtashim";
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         document.write("Book name is : " + book.subject + "&lt;br&gt;");
+         document.write("Book author is : " + book.author + "&lt;br&gt;");
+      &lt;/script&gt;
+   
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Book name is : Perl 
+Book author is : Mohtashim
+</pre> 
+    <h3>Example 2</h3> 
+    <p>This example demonstrates how to create an object with a User-Defined Function. Here <b>this</b> keyword is used to refer to the object that has been passed to a function.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+   &lt;title&gt;User-defined objects&lt;/title&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         function book(title, author){
+            this.title = title; 
+            this.author  = author;
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         var myBook = new book("Perl", "Mohtashim");
+         document.write("Book title is : " + myBook.title + "&lt;br&gt;");
+         document.write("Book author is : " + myBook.author + "&lt;br&gt;");
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Book title is : Perl 
+Book author is : Mohtashim
+</pre> 
+    <h2>Defining Methods for an Object</h2> 
+    <p>The previous examples demonstrate how the constructor creates the object and assigns properties. But we need to complete the definition of an object by assigning methods to it.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example; it shows how to add a function along with an object.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;User-defined objects&lt;/title&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         // Define a function which will work as a method
+         function addPrice(amount){
+            this.price = amount; 
+         }
+         
+         function book(title, author){
+            this.title = title;
+            this.author  = author;
+            this.addPrice = addPrice; // Assign that method as property.
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         var myBook = new book("Perl", "Mohtashim");
+         myBook.addPrice(100);
+         
+         document.write("Book title is : " + myBook.title + "&lt;br&gt;");
+         document.write("Book author is : " + myBook.author + "&lt;br&gt;");
+         document.write("Book price is : " + myBook.price + "&lt;br&gt;");
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Book title is : Perl 
+Book author is : Mohtashim 
+Book price is : 100
+</pre> 
+    <h2>The 'with' Keyword</h2> 
+    <p>The <b>‘with’</b> keyword is used as a kind of shorthand for referencing an object's properties or methods.</p> 
+    <p>The object specified as an argument to <b>with</b> becomes the default object for the duration of the block that follows. The properties and methods for the object can be used without naming the object.</p> 
+    <h3>Syntax</h3> 
+    <p>The syntax for with object is as follows −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+with (object){
+   properties used without the object name and dot
+}
+</pre> 
+    <h3>Example</h3> 
+    <p>Try the following example.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   &lt;title&gt;User-defined objects&lt;/title&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         // Define a function which will work as a method
+         function addPrice(amount){
+            with(this){
+               price = amount;
+            }
+         }
+         
+         function book(title, author){
+            this.title = title;
+            this.author  = author;
+            this.price = 0;
+            this.addPrice = addPrice; // Assign that method as property.
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         var myBook = new book("Perl", "Mohtashim");
+         myBook.addPrice(100);
+         
+         document.write("Book title is : " + myBook.title + "&lt;br&gt;");
+         document.write("Book author is : " + myBook.author + "&lt;br&gt;");
+         document.write("Book price is : " + myBook.price + "&lt;br&gt;");
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> Output 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Book title is : Perl 
+Book author is : Mohtashim 
+Book price is : 100
+</pre> 
+    <h2>JavaScript Native Objects</h2> 
+    <p>JavaScript has several built-in or native objects. These objects are accessible anywhere in your program and will work the same way in any browser running in any operating system.</p> 
+    <p>Here is the list of all important JavaScript Native Objects −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><a>JavaScript Number Object</a></p></li> 
+     <li><p><a>JavaScript Boolean Object</a></p></li> 
+     <li><p><a>JavaScript String Object</a></p></li> 
+     <li><p><a>JavaScript Array Object</a></p></li> 
+     <li><p><a>JavaScript Date Object</a></p></li> 
+     <li><p><a>JavaScript Math Object</a></p></li> 
+     <li><p><a>JavaScript RegExp Object</a></p></li> 
+    </ul> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

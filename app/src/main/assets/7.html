@@ -1,0 +1,163 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - if...else Statement</h1> 
+    <div class="clearer"></div> 
+    <p>While writing a program, there may be a situation when you need to adopt one out of a given set of paths. In such cases, you need to use conditional statements that allow your program to make correct decisions and perform right actions.</p> 
+    <p>JavaScript supports conditional statements which are used to perform different actions based on different conditions. Here we will explain the <b>if..else</b> statement.</p> 
+    <h2>Flow Chart of if-else</h2> 
+    <p>The following flow chart shows how the if-else statement works.</p> 
+    <img src="images/decision_making.jpg" alt="Decision Making"> 
+    <p>JavaScript supports the following forms of <b>if..else</b> statement −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>if statement</p></li> 
+     <li><p>if...else statement</p> </li> 
+     <li><p>if...else if... statement.</p></li> 
+    </ul> 
+    <h2>if statement</h2> 
+    <p>The <b>if</b> statement is the fundamental control statement that allows JavaScript to make decisions and execute statements conditionally.</p> 
+    <h3>Syntax</h3> 
+    <p>The syntax for a basic if statement is as follows −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+if (expression){
+   Statement(s) to be executed if expression is true
+}
+</pre> 
+    <p>Here a JavaScript expression is evaluated. If the resulting value is true, the given statement(s) are executed. If the expression is false, then no statement would be not executed. Most of the times, you will use comparison operators while making decisions.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example to understand how the <b>if</b> statement works.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var age = 20;
+         
+            if( age &gt; 18 ){
+               document.write("&lt;b&gt;Qualifies for driving&lt;/b&gt;");
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Qualifies for driving
+Set the variable to different value and then try...
+</pre> 
+    <h2>if...else statement:</h2> 
+    <p>The <b>'if...else'</b> statement is the next form of control statement that allows JavaScript to execute statements in a more controlled way.</p> 
+    <h3>Syntax</h3> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+if (expression){
+   Statement(s) to be executed if expression is true
+}
+
+else{
+   Statement(s) to be executed if expression is false
+}
+</pre> 
+    <p>Here JavaScript expression is evaluated. If the resulting value is true, the given statement(s) in the ‘if’ block, are executed. If the expression is false, then the given statement(s) in the else block are executed.</p> 
+    <h3>Example</h3> 
+    <p>Try the following code to learn how to implement an if-else statement in JavaScript.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var age = 15;
+         
+            if( age &gt; 18 ){
+               document.write("&lt;b&gt;Qualifies for driving&lt;/b&gt;");
+            }
+            
+            else{
+               document.write("&lt;b&gt;Does not qualify for driving&lt;/b&gt;");
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Does not qualify for driving
+Set the variable to different value and then try...
+</pre> 
+    <h2>if...else if... statement</h2> 
+    <p>The <b>if...else if...</b> statement is an advanced form of <b>if…else</b> that allows JavaScript to make a correct decision out of several conditions.</p> 
+    <h3>Syntax</h3> 
+    <p>The syntax of an if-else-if statement is as follows −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+if (expression 1){
+   Statement(s) to be executed if expression 1 is true
+}
+
+else if (expression 2){
+   Statement(s) to be executed if expression 2 is true
+}
+
+else if (expression 3){
+   Statement(s) to be executed if expression 3 is true
+}
+
+else{
+   Statement(s) to be executed if no expression is true
+}
+</pre> 
+    <p>There is nothing special about this code. It is just a series of <b>if</b> statements, where each <b>if</b> is a part of the <b>else</b> clause of the previous statement. Statement(s) are executed based on the true condition, if none of the conditions is true, then the <b>else</b> block is executed.</p> 
+    <h3>Example</h3> 
+    <p>Try the following code to learn how to implement an if-else-if statement in JavaScript.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var book = "maths";
+            if( book == "history" ){
+               document.write("&lt;b&gt;History Book&lt;/b&gt;");
+            }
+         
+            else if( book == "maths" ){
+               document.write("&lt;b&gt;Maths Book&lt;/b&gt;");
+            }
+         
+            else if( book == "economics" ){
+               document.write("&lt;b&gt;Economics Book&lt;/b&gt;");
+            }
+         
+            else{
+               document.write("&lt;b&gt;Unknown Book&lt;/b&gt;");
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+<b>Maths Book</b>
+Set the variable to different value and then try...
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

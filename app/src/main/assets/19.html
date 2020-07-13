@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Page Printing</h1> 
+    <div class="clearer"></div> 
+    <p>Many times you would like to place a button on your webpage to print the content of that web page via an actual printer. JavaScript helps you to implement this functionality using the <b>print</b> function of <b>window</b> object.</p> 
+    <p>The JavaScript print function <b>window.print()</b> prints the current web page when executed. You can call this function directly using the <b>onclick</b> event as shown in the following example.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+         //--&gt;
+      &lt;/script&gt;
+   
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Print" onclick="window.print()" /&gt;
+      &lt;/form&gt;
+   
+   &lt;/body&gt;
+&lt;html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>Although it serves the purpose of getting a printout, it is not a recommended way. A printer friendly page is really just a page with text, no images, graphics, or advertising.</p> 
+    <p>You can make a page printer friendly in the following ways −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>Make a copy of the page and leave out unwanted text and graphics, then link to that printer friendly page from the original. Check <a target="_blank">Example</a>.</p></li> 
+     <li><p>If you do not want to keep an extra copy of a page, then you can mark your printable text using proper comments like &lt;!-- PRINT STARTS HERE --&gt;..... &lt;!-- PRINT ENDS HERE --&gt; and then you can use PERL or any other script in the background to purge printable text and display for final printing. We at Tutorialspoint use this method to provide print facility to our site visitors. Check <a target="_blank">Example</a>.</p> </li> 
+    </ul> 
+    <h2>How to Print a Page</h2> 
+    <p>If you don’t find the above facilities on a web page, then you can use the browser's standard toolbar to get print the web page. Follow the link as follows.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+File →  Print → Click OK  button.
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

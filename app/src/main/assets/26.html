@@ -1,0 +1,155 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - The Math Object</h1> 
+    <div class="clearer"></div> 
+    <p>The <b>math</b> object provides you properties and methods for mathematical constants and functions. Unlike other global objects, <b>Math</b> is not a constructor. All the properties and methods of <b>Math</b> are static and can be called by using Math as an object without creating it.</p> 
+    <p>Thus, you refer to the constant <b>pi</b> as <b>Math.PI</b> and you call the <i>sine</i> function as <b>Math.sin(x)</b>, where x is the method's argument.</p> 
+    <h3>Syntax</h3> 
+    <p>The syntax to call the properties and methods of Math are as follows</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+var pi_val = Math.PI;
+var sine_val = Math.sin(30);
+</pre> 
+    <h2>Math Properties</h2> 
+    <p>Here is a list of all the properties of Math and their description.</p> 
+    <table class="table table-bordered" style="background-color:white"> 
+     <tbody> 
+      <tr> 
+       <th style="text-align:center;">Sr.No</th> 
+       <th style="text-align:center;">Property &amp; Description</th> 
+      </tr> 
+      <tr> 
+       <td class="ts">1</td> 
+       <td><a>E \</a> <p>Euler's constant and the base of natural logarithms, approximately 2.718.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">2</td> 
+       <td><a>LN2</a> <p>Natural logarithm of 2, approximately 0.693.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">3</td> 
+       <td><a>LN10</a> <p>Natural logarithm of 10, approximately 2.302.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">4</td> 
+       <td><a>LOG2E</a> <p>Base 2 logarithm of E, approximately 1.442.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">5</td> 
+       <td><a>LOG10E</a> <p>Base 10 logarithm of E, approximately 0.434.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">6</td> 
+       <td><a>PI</a> <p>Ratio of the circumference of a circle to its diameter, approximately 3.14159.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">7</td> 
+       <td><a>SQRT1_2</a> <p>Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">8</td> 
+       <td><a>SQRT2</a> <p>Square root of 2, approximately 1.414.</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <p>In the following sections, we will have a few examples to demonstrate the usage of Math properties.</p> 
+    <h2>Math Methods</h2> 
+    <p>Here is a list of the methods associated with Math object and their description</p> 
+    <table class="table table-bordered" style="background-color:white"> 
+     <tbody> 
+      <tr> 
+       <th style="text-align:center;">Sr.No</th> 
+       <th style="text-align:center;">Method &amp; Description</th> 
+      </tr> 
+      <tr> 
+       <td class="ts">1</td> 
+       <td><a>abs()</a> <p>Returns the absolute value of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">2</td> 
+       <td><a>acos()</a> <p>Returns the arccosine (in radians) of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">3</td> 
+       <td><a>asin()</a> <p>Returns the arcsine (in radians) of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">4</td> 
+       <td><a>atan()</a> <p>Returns the arctangent (in radians) of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">5</td> 
+       <td><a>atan2()</a> <p>Returns the arctangent of the quotient of its arguments.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">6</td> 
+       <td><a>ceil()</a> <p>Returns the smallest integer greater than or equal to a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">7</td> 
+       <td><a>cos()</a> <p>Returns the cosine of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">8</td> 
+       <td><a>exp()</a> <p>Returns E<sup>N</sup>, where N is the argument, and E is Euler's constant, the base of the natural logarithm.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">9</td> 
+       <td><a>floor()</a> <p>Returns the largest integer less than or equal to a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">10</td> 
+       <td><a>log()</a> <p>Returns the natural logarithm (base E) of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">11</td> 
+       <td><a>max()</a> <p>Returns the largest of zero or more numbers.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">12</td> 
+       <td><a>min()</a> <p>Returns the smallest of zero or more numbers.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">13</td> 
+       <td><a>pow()</a> <p>Returns base to the exponent power, that is, base exponent.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">14</td> 
+       <td><a>random()</a> <p>Returns a pseudo-random number between 0 and 1.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">15</td> 
+       <td><a>round()</a> <p>Returns the value of a number rounded to the nearest integer.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">16</td> 
+       <td><a>sin()</a> <p>Returns the sine of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">17</td> 
+       <td><a>sqrt()</a> <p>Returns the square root of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">18</td> 
+       <td><a>tan()</a> <p>Returns the tangent of a number.</p></td> 
+      </tr> 
+      <tr> 
+       <td class="ts">19</td> 
+       <td><a>toSource()</a> <p>Returns the string "Math".</p></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <p>In the following sections, we will have a few examples to demonstrate the usage of the methods associated with Math.</p> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

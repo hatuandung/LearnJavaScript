@@ -1,0 +1,124 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Switch Case</h1> 
+    <div class="clearer"></div> 
+    <p>You can use multiple <b>if...else…if</b> statements, as in the previous chapter, to perform a multiway branch. However, this is not always the best solution, especially when all of the branches depend on the value of a single variable.</p> 
+    <p>Starting with JavaScript 1.2, you can use a <b>switch</b> statement which handles exactly this situation, and it does so more efficiently than repeated <b>if...else if</b> statements.</p> 
+    <h2>Flow Chart</h2> 
+    <p>The following flow chart explains a switch-case statement works.</p> 
+    <img src="images/switch_case.jpg" alt=""> 
+    <h3>Syntax</h3> 
+    <p>The objective of a <b>switch</b> statement is to give an expression to evaluate and several different statements to execute based on the value of the expression. The interpreter checks each <b>case</b> against the value of the expression until a match is found. If nothing matches, a <b>default</b> condition will be used.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+switch (expression)
+{
+   case condition 1: statement(s)
+   break;
+   
+   case condition 2: statement(s)
+   break;
+   ...
+   
+   case condition n: statement(s)
+   break;
+   
+   default: statement(s)
+}
+</pre> 
+    <p>The <b>break</b> statements indicate the end of a particular case. If they were omitted, the interpreter would continue executing each statement in each of the following cases.</p> 
+    <p>We will explain <b>break</b> statement in <i>Loop Control</i> chapter.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example to implement switch-case statement.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var grade='A';
+            document.write("Entering switch block&lt;br /&gt;");
+            switch (grade)
+            {
+               case 'A': document.write("Good job&lt;br /&gt;");
+               break;
+            
+               case 'B': document.write("Pretty good&lt;br /&gt;");
+               break;
+            
+               case 'C': document.write("Passed&lt;br /&gt;");
+               break;
+            
+               case 'D': document.write("Not so good&lt;br /&gt;");
+               break;
+            
+               case 'F': document.write("Failed&lt;br /&gt;");
+               break;
+            
+               default:  document.write("Unknown grade&lt;br /&gt;")
+            }
+            document.write("Exiting switch block");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Entering switch block
+Good job
+Exiting switch block
+Set the variable to different value and then try...
+</pre> 
+    <p>Break statements play a major role in switch-case statements. Try the following code that uses switch-case statement without any break statement.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var grade='A';
+            document.write("Entering switch block&lt;br /&gt;");
+            switch (grade)
+            {
+               case 'A': document.write("Good job&lt;br /&gt;");
+               case 'B': document.write("Pretty good&lt;br /&gt;");
+               case 'C': document.write("Passed&lt;br /&gt;");
+               case 'D': document.write("Not so good&lt;br /&gt;");
+               case 'F': document.write("Failed&lt;br /&gt;");
+               default: document.write("Unknown grade&lt;br /&gt;")
+            }
+            document.write("Exiting switch block");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Entering switch block
+Good job
+Pretty good
+Passed
+Not so good
+Failed
+Unknown grade
+Exiting switch block
+Set the variable to different value and then try...
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

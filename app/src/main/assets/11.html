@@ -1,0 +1,85 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript <i>for...in</i> loop</h1> 
+    <div class="clearer"></div> 
+    <p>The <b>for...in</b> loop is used to loop through an object's properties. As we have not discussed Objects yet, you may not feel comfortable with this loop. But once you understand how objects behave in JavaScript, you will find this loop very useful.</p> 
+    <h2>Syntax</h2> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+for (variablename in object){
+   statement or block to execute
+}
+</pre> 
+    <p>In each iteration, one property from <b>object</b> is assigned to <b>variablename</b> and this loop continues till all the properties of the object are exhausted.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example to implement ‘for-in’ loop. It prints the web browser’s <b>Navigator</b> object.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var aProperty;
+            document.write("Navigator Object Properties&lt;br /&gt; ");
+         
+            for (aProperty in navigator) {
+               document.write(aProperty);
+               document.write("&lt;br /&gt;");
+            }
+            document.write ("Exiting from the loop!");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different object and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Navigator Object Properties 
+serviceWorker 
+webkitPersistentStorage 
+webkitTemporaryStorage 
+geolocation 
+doNotTrack 
+onLine 
+languages 
+language 
+userAgent 
+product 
+platform 
+appVersion 
+appName 
+appCodeName 
+hardwareConcurrency 
+maxTouchPoints 
+vendorSub 
+vendor 
+productSub 
+cookieEnabled 
+mimeTypes 
+plugins 
+javaEnabled 
+getStorageUpdates 
+getGamepads 
+webkitGetUserMedia 
+vibrate 
+getBattery 
+sendBeacon 
+registerProtocolHandler 
+unregisterProtocolHandler 
+Exiting from the loop!
+Set the variable to different object and then try...
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

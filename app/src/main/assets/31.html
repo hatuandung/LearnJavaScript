@@ -1,0 +1,187 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Animation</h1> 
+    <div class="clearer"></div> 
+    <p>You can use JavaScript to create a complex animation having, but not limited to, the following elements −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li>Fireworks</li> 
+     <li>Fade Effect</li> 
+     <li>Roll-in or Roll-out</li> 
+     <li>Page-in or Page-out</li> 
+     <li>Object movements</li> 
+    </ul> 
+    <p>You might be interested in existing JavaScript based animation library: <a target="_blank">Script.Aculo.us</a>.</p> 
+    <p>This tutorial provides a basic understanding of how to use JavaScript to create an animation.</p> 
+    <p>JavaScript can be used to move a number of DOM elements (&lt;img /&gt;, &lt;div&gt; or any other HTML element) around the page according to some sort of pattern determined by a logical equation or function.</p> 
+    <p>JavaScript provides the following two functions to be frequently used in animation programs.</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><b>setTimeout( function, duration)</b> − This function calls <b>function</b> after <b>duration</b> milliseconds from now.</p></li> 
+     <li><p><b>setInterval(function, duration)</b> − This function calls <b>function</b> after every <b>duration</b> milliseconds.</p></li> 
+     <li><p><b>clearTimeout(setTimeout_variable)</b> − This function calls clears any timer set by the setTimeout() functions.</p></li> 
+    </ul> 
+    <p>JavaScript can also set a number of attributes of a DOM object including its position on the screen. You can set <i>top</i> and left attribute of an object to position it anywhere on the screen. Here is its syntax.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+// Set distance from left edge of the screen.
+object.style.left = distance in pixels or points; 
+
+or
+
+// Set distance from top edge of the screen.
+object.style.top = distance in pixels or points; 
+</pre> 
+    <h2>Manual Animation</h2> 
+    <p>So let's implement one simple animation using DOM object properties and JavaScript functions as follows. The following list contains different DOM methods.</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>We are using the JavaScript function <b>getElementById()</b> to get a DOM object and then assigning it to a global variable <b>imgObj</b>.</p></li> 
+     <li><p>We have defined an initialization function <b>init()</b> to initialize <b>imgObj</b> where we have set its <b>position</b> and <b>left</b> attributes.</p></li> 
+     <li><p>We are calling initialization function at the time of window load.</p></li> 
+     <li><p>Finally, we are calling <b>moveRight()</b> function to increase the left distance by 10 pixels. You could also set it to a negative value to move it to the left side.</p></li> 
+    </ul> 
+    <h3>Example</h3> 
+    <p>Try the following example.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;JavaScript Animation&lt;/title&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var imgObj = null;
+            
+            function init(){
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            
+            function moveRight(){
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+            }
+            
+            window.onload =init;
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;form&gt;
+         &lt;img id="myImage" src="/images/html.gif" /&gt;
+         &lt;p&gt;Click button below to move the image to right&lt;/p&gt;
+         &lt;input type="button" value="Click Me" onclick="moveRight();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h2>Automated Animation</h2> 
+    <p>In the above example, we saw how an image moves to right with every click. We can automate this process by using the JavaScript function <b>setTimeout()</b> as follows −</p> 
+    <p>Here we have added more methods. So let's see what is new here −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>The <b>moveRight()</b> function is calling <b>setTimeout()</b> function to set the position of <i>imgObj</i>.</p></li> 
+     <li><p>We have added a new function <b>stop()</b> to clear the timer set by <b>setTimeout()</b> function and to set the object at its initial position.</p></li> 
+    </ul> 
+    <h3>Example</h3> 
+    <p>Try the following example code.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;JavaScript Animation&lt;/title&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var imgObj = null;
+            var animate ;
+            
+            function init(){
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            
+            function moveRight(){
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+               animate = setTimeout(moveRight,20); // call moveRight in 20msec
+            }
+            
+            function stop(){
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+            
+            window.onload =init;
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;form&gt;
+         &lt;img id="myImage" src="/images/html.gif" /&gt;
+         &lt;p&gt;Click the buttons below to handle animation&lt;/p&gt;
+         &lt;input type="button" value="Start" onclick="moveRight();" /&gt;
+         &lt;input type="button" value="Stop" onclick="stop();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h2>Rollover with a Mouse Event</h2> 
+    <p>Here is a simple example showing image rollover with a mouse event.</p> 
+    <p>Let's see what we are using in the following example −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>At the time of loading this page, the ‘if’ statement checks for the existence of the image object. If the image object is unavailable, this block will not be executed.</p></li> 
+     <li><p>The <b>Image()</b> constructor creates and preloads a new image object called <b>image1</b>.</p></li> 
+     <li><p>The src property is assigned the name of the external image file called /images/html.gif.</p></li> 
+     <li><p>Similarly, we have created <b>image2</b> object and assigned /images/http.gif in this object.</p></li> 
+     <li><p>The # (hash mark) disables the link so that the browser does not try to go to a URL when clicked. This link is an image.</p></li> 
+     <li><p>The <b>onMouseOver</b> event handler is triggered when the user's mouse moves onto the link, and the <b>onMouseOut</b> event handler is triggered when the user's mouse moves away from the link (image).</p></li> 
+     <li><p>When the mouse moves over the image, the HTTP image changes from the first image to the second one. When the mouse is moved away from the image, the original image is displayed.</p></li> 
+     <li><p>When the mouse is moved away from the link, the initial image html.gif will reappear on the screen.</p></li> 
+    </ul> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Rollover with a Mouse Events&lt;/title&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            if(document.images){
+               var image1 = new Image(); // Preload an image
+               image1.src = "/images/html.gif";
+               var image2 = new Image(); // Preload second image
+               image2.src = "/images/http.gif";
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Move your mouse over the image to see the result&lt;/p&gt;
+      
+      &lt;a href="#" onMouseOver="document.myImage.src=image2.src;" onMouseOut="document.myImage.src=image1.src;"&gt;
+      &lt;img name="myImage" src="/images/html.gif" /&gt;
+      &lt;/a&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

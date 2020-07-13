@@ -1,0 +1,290 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Errors &amp; Exceptions Handling</h1> 
+    <div class="clearer"></div> 
+    <p>There are three types of errors in programming: (a) Syntax Errors, (b) Runtime Errors, and (c) Logical Errors.</p> 
+    <h2>Syntax Errors</h2> 
+    <p>Syntax errors, also called <b>parsing errors,</b> occur at compile time in traditional programming languages and at interpret time in JavaScript.</p> 
+    <p>For example, the following line causes a syntax error because it is missing a closing parenthesis.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      window.print(;
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <p>When a syntax error occurs in JavaScript, only the code contained within the same thread as the syntax error is affected and the rest of the code in other threads gets executed assuming nothing in them depends on the code containing the error.</p> 
+    <h2>Runtime Errors</h2> 
+    <p>Runtime errors, also called <b>exceptions,</b> occur during execution (after compilation/interpretation).</p> 
+    <p>For example, the following line causes a runtime error because here the syntax is correct, but at runtime, it is trying to call a method that does not exist.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      window.printme();
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <p>Exceptions also affect the thread in which they occur, allowing other JavaScript threads to continue normal execution.</p> 
+    <h2>Logical Errors</h2> 
+    <p>Logic errors can be the most difficult type of errors to track down. These errors are not the result of a syntax or runtime error. Instead, they occur when you make a mistake in the logic that drives your script and you do not get the result you expected.</p> 
+    <p>You cannot catch those errors, because it depends on your business requirement what type of logic you want to put in your program.</p> 
+    <h2>The try...catch...finally Statement</h2> 
+    <p>The latest versions of JavaScript added exception handling capabilities. JavaScript implements the <b>try...catch...finally</b> construct as well as the <b>throw</b> operator to handle exceptions.</p> 
+    <p>You can <b>catch</b> programmer-generated and <b>runtime</b> exceptions, but you cannot <b>catch</b> JavaScript syntax errors.</p> 
+    <p>Here is the <b>try...catch...finally</b> block syntax −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      try {
+         // Code to run
+         [break;]
+      } 
+      
+      catch ( e ) {
+         // Code to run if an exception occurs
+         [break;]
+      }
+      
+      [ finally {
+         // Code that is always executed regardless of 
+         // an exception occurring
+      }]
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <p>The <b>try</b> block must be followed by either exactly one <b>catch</b> block or one <b>finally</b> block (or one of both). When an exception occurs in the <b>try</b> block, the exception is placed in <b>e</b> and the <b>catch</b> block is executed. The optional <b>finally</b> block executes unconditionally after try/catch.</p> 
+    <h3>Examples</h3> 
+    <p>Here is an example where we are trying to call a non-existing function which in turn is raising an exception. Let us see how it behaves without <b>try...catch</b>−</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function myFunc()
+            {
+               var a = 100;
+               alert("Value of variable a is : " + a );
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="myFunc();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>Now let us try to catch this exception using <b>try...catch</b> and display a user-friendly message. You can also suppress this message, if you want to hide this error from a user.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function myFunc()
+            {
+               var a = 100;
+               try {
+                  alert("Value of variable a is : " + a );
+               } 
+               
+               catch ( e ) {
+                  alert("Error: " + e.description );
+               }
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="myFunc();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>You can use <b>finally</b> block which will always execute unconditionally after the try/catch. Here is an example.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function myFunc()
+            {
+               var a = 100;
+               
+               try {
+                  alert("Value of variable a is : " + a );
+               }
+               
+               catch ( e ) {
+                  alert("Error: " + e.description );
+               }
+               
+               finally {
+                  alert("Finally block will always execute!" );
+               }
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="myFunc();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h2>The throw Statement</h2> 
+    <p>You can use <b>throw</b> statement to raise your built-in exceptions or your customized exceptions. Later these exceptions can be captured and you can take an appropriate action.</p> 
+    <h3>Example</h3> 
+    <p>The following example demonstrates how to use a <b>throw</b> statement.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function myFunc()
+            {
+               var a = 100;
+               var b = 0;
+               
+               try{
+                  if ( b == 0 ){
+                     throw( "Divide by zero error." ); 
+                  }
+                  
+                  else
+                  {
+                     var c = a / b;
+                  }
+               }
+               
+               catch ( e ) {
+                  alert("Error: " + e );
+               }
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="myFunc();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>You can raise an exception in one function using a string, integer, Boolean, or an object and then you can capture that exception either in the same function as we did above, or in another function using a <b>try...catch</b> block.</p> 
+    <h2>The onerror() Method</h2> 
+    <p>The <b>onerror</b> event handler was the first feature to facilitate error handling in JavaScript. The <b>error</b> event is fired on the window object whenever an exception occurs on the page.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            window.onerror = function () {
+               alert("An error occurred.");
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="myFunc();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>The <b>onerror</b> event handler provides three pieces of information to identify the exact nature of the error −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><b>Error message</b> − The same message that the browser would display for the given error</p></li> 
+     <li><p><b>URL</b> − The file in which the error occurred</p></li> 
+     <li><p><b>Line number</b>− The line number in the given URL that caused the error</p></li> 
+    </ul> 
+    <p>Here is the example to show how to extract this information.</p> 
+    <h3>Example</h3> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            window.onerror = function (msg, url, line) {
+               alert("Message : " + msg );
+               alert("url : " + url );
+               alert("Line number : " + line );
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following to see the result:&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" value="Click Me" onclick="myFunc();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>You can display extracted information in whatever way you think it is better.</p> 
+    <p>You can use an <b>onerror</b> method, as shown below, to display an error message in case there is any problem in loading an image.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;img src="myimage.gif" onerror="alert('An error occurred loading the image.')" /&gt;
+</pre> 
+    <p>You can use <b>onerror</b> with many HTML tags to display appropriate messages in case of errors.</p> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

@@ -1,0 +1,142 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Multimedia</h1> 
+    <div class="clearer"></div> 
+    <p>The JavaScript <b>navigator</b> object includes a child object called <b>plugins</b>. This object is an array, with one entry for each plug-in installed on the browser. The navigator.plugins object is supported only by Netscape, Firefox, and Mozilla only.</p> 
+    <h3>Example</h3> 
+    <p>Here is an example that shows how to list down all the plug-on installed in your browser −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;List of Plug-Ins&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;table border="1"&gt;
+         &lt;tr&gt;
+            &lt;th&gt;Plug-in Name&lt;/th&gt;
+            &lt;th&gt;Filename&lt;/th&gt;
+            &lt;th&gt;Description&lt;/th&gt;
+         &lt;/tr&gt;
+         
+         &lt;script language="JavaScript" type="text/javascript"&gt;
+            for (i=0; i&lt;navigator.plugins.length; i++) {
+               document.write("&lt;tr&gt;&lt;td&gt;");
+               document.write(navigator.plugins[i].name);
+               document.write("&lt;/td&gt;&lt;td&gt;");
+               document.write(navigator.plugins[i].filename);
+               document.write("&lt;/td&gt;&lt;td&gt;");
+               document.write(navigator.plugins[i].description);
+               document.write("&lt;/td&gt;&lt;/tr&gt;");
+            }
+         &lt;/script&gt;
+         
+      &lt;/table&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h2>Checking for Plug-Ins</h2> 
+    <p>Each plug-in has an entry in the array. Each entry has the following properties −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><b>name</b> − is the name of the plug-in.</p></li> 
+     <li><p><b>filename</b> − is the executable file that was loaded to install the plug-in.</p></li> 
+     <li><p><b>description</b> − is a description of the plug-in, supplied by the developer.</p></li> 
+     <li><p><b>mimeTypes</b> − is an array with one entry for each MIME type supported by the plug-in.</p></li> 
+    </ul> 
+    <p>You can use these properties in a script to find out the installed plug-ins, and then using JavaScript, you can play appropriate multimedia file. Take a look at the following example.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Using Plug-Ins&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;script language="JavaScript" type="text/javascript"&gt;
+         media = navigator.mimeTypes["video/quicktime"];
+         
+         if (media){
+            document.write("&lt;embed src='quick.mov' height=100 width=100&gt;");
+         }
+         else
+         {
+            document.write("&lt;img src='quick.gif' height=100 width=100&gt;");
+         }
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p><b>NOTE</b> − Here we are using HTML &lt;embed&gt; tag to embed a multimedia file.</p> 
+    <h2>Controlling Multimedia</h2> 
+    <p>Let us take one real example which works in almost all the browsers −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Using Embeded Object&lt;/title&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function play()
+            {
+               if (!document.demo.IsPlaying()){
+                  document.demo.Play();
+               }
+            }
+            function stop()
+            {
+               if (document.demo.IsPlaying()){
+                  document.demo.StopPlay();
+               }
+            }
+            function rewind()
+            {
+               if (document.demo.IsPlaying()){
+                  document.demo.StopPlay();
+               }
+               document.demo.Rewind();
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      
+      &lt;embed id="demo" name="demo"
+      src="http://www.amrood.com/games/kumite.swf"
+      width="318" height="300" play="false" loop="false"
+      pluginspage="http://www.macromedia.com/go/getflashplayer"
+      swliveconnect="true"&gt;
+      &lt;/embed&gt;
+      
+      &lt;form name="form" id="form" action="#" method="get"&gt;
+         &lt;input type="button" value="Start" onclick="play();" /&gt;
+         &lt;input type="button" value="Stop" onclick="stop();" /&gt;
+         &lt;input type="button" value="Rewind" onclick="rewind();" /&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>If you are using Mozilla, Firefox or Netscape, then</p> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

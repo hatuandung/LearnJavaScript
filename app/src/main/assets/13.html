@@ -1,0 +1,146 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Functions</h1> 
+    <div class="clearer"></div> 
+    <p>A function is a group of reusable code which can be called anywhere in your program. This eliminates the need of writing the same code again and again. It helps programmers in writing modular codes. Functions allow a programmer to divide a big program into a number of small and manageable functions.</p> 
+    <p>Like any other advanced programming language, JavaScript also supports all the features necessary to write modular code using functions. You must have seen functions like <b>alert()</b> and <b>write()</b> in the earlier chapters. We were using these functions again and again, but they had been written in core JavaScript only once.</p> 
+    <p>JavaScript allows us to write our own functions as well. This section explains how to write your own functions in JavaScript.</p> 
+    <h2>Function Definition</h2> 
+    <p>Before we use a function, we need to define it. The most common way to define a function in JavaScript is by using the <b>function</b> keyword, followed by a unique function name, a list of parameters (that might be empty), and a statement block surrounded by curly braces.</p> 
+    <h3>Syntax</h3> 
+    <p>The basic syntax is shown here.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      function functionname(parameter-list)
+      {
+         statements
+      }
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <h3>Example</h3> 
+    <p>Try the following example. It defines a function called sayHello that takes no parameters −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      function sayHello()
+      {
+         alert("Hello there");
+      }
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <h2>Calling a Function</h2> 
+    <p>To invoke a function somewhere later in the script, you would simply need to write the name of that function as shown in the following code.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         function sayHello()
+         {
+            document.write ("Hello there!");
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Click the following button to call the function&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" onclick="sayHello()" value="Say Hello"&gt;
+      &lt;/form&gt;
+      
+      &lt;p&gt;Use different text in write method and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h2>Function Parameters</h2> 
+    <p>Till now, we have seen functions without parameters. But there is a facility to pass different parameters while calling a function. These passed parameters can be captured inside the function and any manipulation can be done over those parameters. A function can take multiple parameters separated by comma.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example. We have modified our <b>sayHello</b> function here. Now it takes two parameters.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         function sayHello(name, age)
+         {
+            document.write (name + " is " + age + " years old.");
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;p&gt;Click the following button to call the function&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" onclick="sayHello('Zara', 7)" value="Say Hello"&gt;
+      &lt;/form&gt;
+      
+      &lt;p&gt;Use different parameters inside the function and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h2>The return Statement</h2> 
+    <p>A JavaScript function can have an optional <b>return</b> statement. This is required if you want to return a value from a function. This statement should be the last statement in a function.</p> 
+    <p>For example, you can pass two numbers in a function and then you can expect the function to return their multiplication in your calling program.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example. It defines a function that takes two parameters and concatenates them before returning the resultant in the calling program.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         function concatenate(first, last)
+         {
+            var full;
+            full = first + last;
+            return full;
+         }
+         
+         function secondFunction()
+         {
+            var result;
+            result = concatenate('Zara', 'Ali');
+            document.write (result );
+         }
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;p&gt;Click the following button to call the function&lt;/p&gt;
+      
+      &lt;form&gt;
+         &lt;input type="button" onclick="secondFunction()" value="Call Function"&gt;
+      &lt;/form&gt;
+      
+      &lt;p&gt;Use different parameters inside the function and then try...&lt;/p&gt;
+  
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <p>There is a lot to learn about JavaScript functions, however we have covered the most important concepts in this tutorial.</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><a title="JavaScript Nested Functions">JavaScript Nested Functions</a></p></li> 
+     <li><p><a title="JavaScript Function Constructors">JavaScript Function( ) Constructor</a></p></li> 
+     <li><p><a title="JavaScript Function Literals">JavaScript Function Literals</a></p></li> 
+    </ul> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

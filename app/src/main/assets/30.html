@@ -1,0 +1,149 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Form Validation</h1> 
+    <div class="clearer"></div> 
+    <p>Form validation normally used to occur at the server, after the client had entered all the necessary data and then pressed the Submit button. If the data entered by a client was incorrect or was simply missing, the server would have to send all the data back to the client and request that the form be resubmitted with correct information. This was really a lengthy process which used to put a lot of burden on the server.</p> 
+    <p>JavaScript provides a way to validate form's data on the client's computer before sending it to the web server. Form validation generally performs two functions.</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p><b>Basic Validation</b> − First of all, the form must be checked to make sure all the mandatory fields are filled in. It would require just a loop through each field in the form and check for data.</p></li> 
+     <li><p><b>Data Format Validation</b> − Secondly, the data that is entered must be checked for correct form and value. Your code must include appropriate logic to test correctness of data.</p></li> 
+    </ul> 
+    <h3>Example</h3> 
+    <p>We will take an example to understand the process of validation. Here is a simple form in html format.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   
+   &lt;head&gt;
+      &lt;title&gt;Form Validation&lt;/title&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            // Form validation code will come here.
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;form action="/cgi-bin/test.cgi" name="myForm" onsubmit="return(validate());"&gt;
+         &lt;table cellspacing="2" cellpadding="2" border="1"&gt;
+            
+            &lt;tr&gt;
+               &lt;td align="right"&gt;Name&lt;/td&gt;
+               &lt;td&gt;&lt;input type="text" name="Name" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;tr&gt;
+               &lt;td align="right"&gt;EMail&lt;/td&gt;
+               &lt;td&gt;&lt;input type="text" name="EMail" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;tr&gt;
+               &lt;td align="right"&gt;Zip Code&lt;/td&gt;
+               &lt;td&gt;&lt;input type="text" name="Zip" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;tr&gt;
+               &lt;td align="right"&gt;Country&lt;/td&gt;
+               &lt;td&gt;
+                  &lt;select name="Country"&gt;
+                     &lt;option value="-1" selected&gt;[choose yours]&lt;/option&gt;
+                     &lt;option value="1"&gt;USA&lt;/option&gt;
+                     &lt;option value="2"&gt;UK&lt;/option&gt;
+                     &lt;option value="3"&gt;INDIA&lt;/option&gt;
+                  &lt;/select&gt;
+               &lt;/td&gt;
+            &lt;/tr&gt;
+            
+            &lt;tr&gt;
+               &lt;td align="right"&gt;&lt;/td&gt;
+               &lt;td&gt;&lt;input type="submit" value="Submit" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            
+         &lt;/table&gt;
+      &lt;/form&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <h2>Basic Form Validation</h2> 
+    <p>First let us see how to do a basic form validation. In the above form, we are calling <b>validate()</b> to validate data when <b>onsubmit</b> event is occurring. The following code shows the implementation of this validate() function.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      // Form validation code will come here.
+      function validate()
+      {
+      
+         if( document.myForm.Name.value == "" )
+         {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.EMail.value == "" )
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.Zip.value == "" ||
+         isNaN( document.myForm.Zip.value ) ||
+         document.myForm.Zip.value.length != 5 )
+         {
+            alert( "Please provide a zip in the format #####." );
+            document.myForm.Zip.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.Country.value == "-1" )
+         {
+            alert( "Please provide your country!" );
+            return false;
+         }
+         return( true );
+      }
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <h2>Data Format Validation</h2> 
+    <p>Now we will see how we can validate our entered form data before submitting it to the web server.</p> 
+    <p>The following example shows how to validate an entered email address. An email address must contain at least a ‘@’ sign and a dot (.). Also, the ‘@’ must not be the first character of the email address, and the last dot must at least be one character after the ‘@’ sign.</p> 
+    <h3>Example</h3> 
+    <p>Try the following code for email validation.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;script type="text/javascript"&gt;
+   &lt;!--
+      function validateEmail()
+      {
+         var emailID = document.myForm.EMail.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos &lt; 1 || ( dotpos - atpos &lt; 2 )) 
+         {
+            alert("Please enter correct email ID")
+            document.myForm.EMail.focus() ;
+            return false;
+         }
+         return( true );
+      }
+   //--&gt;
+&lt;/script&gt;
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

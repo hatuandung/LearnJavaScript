@@ -1,0 +1,121 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - Placement in HTML File</h1> 
+    <div class="clearer"></div> 
+    <p>There is a flexibility given to include JavaScript code anywhere in an HTML document. However the most preferred ways to include JavaScript in an HTML file are as follows −</p> 
+    <ul class="list" style="-webkit-padding-start:5px"> 
+     <li><p>Script in &lt;head&gt;...&lt;/head&gt; section.</p></li> 
+     <li><p>Script in &lt;body&gt;...&lt;/body&gt; section.</p></li> 
+     <li><p>Script in &lt;body&gt;...&lt;/body&gt; and &lt;head&gt;...&lt;/head&gt; sections.</p></li> 
+     <li><p>Script in an external file and then include in &lt;head&gt;...&lt;/head&gt; section.</p></li> 
+    </ul> 
+    <p>In the following section, we will see how we can place JavaScript in an HTML file in different ways.</p> 
+    <h2>JavaScript in &lt;head&gt;...&lt;/head&gt; section</h2> 
+    <p>If you want to have a script run on some event, such as when a user clicks somewhere, then you will place that script in the head as follows −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+
+   &lt;head&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function sayHello() {
+               alert("Hello World")
+            }
+         //--&gt;
+      &lt;/script&gt;
+      
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;input type="button" onclick="sayHello()" value="Say Hello" /&gt;
+   &lt;/body&gt;
+   
+&lt;/html&gt;
+</pre> 
+    <p>This code will produce the following results −</p> 
+    <h2>JavaScript in &lt;body&gt;...&lt;/body&gt; section</h2> 
+    <p>If you need a script to run as the page loads so that the script generates content in the page, then the script goes in the &lt;body&gt; portion of the document. In this case, you would not have any function defined using JavaScript. Take a look at the following code.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+
+   &lt;head&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            document.write("Hello World")
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;This is web page body &lt;/p&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <p>This code will produce the following results −</p> 
+    <h2>JavaScript in &lt;body&gt; and &lt;head&gt; Sections</h2> 
+    <p>You can put your JavaScript code in &lt;head&gt; and &lt;body&gt; section altogether as follows −</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            function sayHello() {
+               alert("Hello World")
+            }
+         //--&gt;
+      &lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            document.write("Hello World")
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;input type="button" onclick="sayHello()" value="Say Hello" /&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <p>This code will produce the following result −</p> 
+    <h2>JavaScript in External File</h2> 
+    <p>As you begin to work more extensively with JavaScript, you will be likely to find that there are cases where you are reusing identical JavaScript code on multiple pages of a site.</p> 
+    <p>You are not restricted to be maintaining identical code in multiple HTML files. The <b>script</b> tag provides a mechanism to allow you to store JavaScript in an external file and then include it into your HTML files.</p> 
+    <p>Here is an example to show how you can include an external JavaScript file in your HTML code using <b>script</b> tag and its <b>src</b> attribute.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;html&gt;
+
+   &lt;head&gt;
+      &lt;script type="text/javascript" src="filename.js" &gt;&lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      .......
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <p>To use JavaScript from an external file source, you need to write all your JavaScript source code in a simple text file with the extension ".js" and then include that file as shown above.</p> 
+    <p>For example, you can keep the following content in <b>filename.js</b> file and then you can use <b>sayHello</b> function in your HTML file after including the filename.js file.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+function sayHello() {
+   alert("Hello World")
+}
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../theme/css/style-min.css?v=3"> 
+  <style>img{display: inline; height: auto; max-width: 100%;}</style>
+ </head>
+ <body>
+  <div class="content"> 
+   <div class="col-md-7 middle-col"> 
+    <h1>JavaScript - While Loops</h1> 
+    <div class="clearer"></div> 
+    <p>While writing a program, you may encounter a situation where you need to perform an action over and over again. In such situations, you would need to write loop statements to reduce the number of lines.</p> 
+    <p>JavaScript supports all the necessary loops to ease down the pressure of programming.</p> 
+    <h2>The while Loop</h2> 
+    <p>The most basic loop in JavaScript is the <b>while</b> loop which would be discussed in this chapter. The purpose of a <b>while</b> loop is to execute a statement or code block repeatedly as long as an <b>expression</b> is true. Once the expression becomes <b>false,</b> the loop terminates.</p> 
+    <h3>Flow Chart</h3> 
+    <p>The flow chart of <b>while loop</b> looks as follows −</p> 
+    <img src="images/while_loop.jpg" alt="While loop"> 
+    <h3>Syntax</h3> 
+    <p>The syntax of <b>while loop</b> in JavaScript is as follows −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+while (expression){
+   Statement(s) to be executed if expression is true
+}
+</pre> 
+    <h3>Example</h3> 
+    <p>Try the following example to implement while loop.</p> 
+    <pre class="prettyprint notranslate tryit" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+      
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var count = 0;
+            document.write("Starting Loop ");
+         
+            while (count &lt; 10){
+               document.write("Current Count : " + count + "&lt;br /&gt;");
+               count++;
+            }
+         
+            document.write("Loop stopped!");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Starting Loop
+Current Count : 0
+Current Count : 1
+Current Count : 2
+Current Count : 3
+Current Count : 4
+Current Count : 5
+Current Count : 6
+Current Count : 7
+Current Count : 8
+Current Count : 9
+Loop stopped!
+Set the variable to different value and then try... 
+</pre> 
+    <h2>The do...while Loop</h2> 
+    <p>The <b>do...while</b> loop is similar to the <b>while</b> loop except that the condition check happens at the end of the loop. This means that the loop will always be executed at least once, even if the condition is <b>false</b>.</p> 
+    <h3>Flow Chart</h3> 
+    <p>The flow chart of a <b>do-while</b> loop would be as follows −</p> 
+    <img src="images/do_while_loop.jpg" alt="Do While Loop"> 
+    <h3>Syntax</h3> 
+    <p>The syntax for <b>do-while</b> loop in JavaScript is as follows −</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+do{
+   Statement(s) to be executed;
+} while (expression);
+</pre> 
+    <p><b>Note</b> − Don’t miss the semicolon used at the end of the do...while loop.</p> 
+    <h3>Example</h3> 
+    <p>Try the following example to learn how to implement a <b>do-while</b> loop in JavaScript.</p> 
+    <pre class="prettyprint notranslate" style="white-space:pre-wrap;">
+&lt;html&gt;
+   &lt;body&gt;
+   
+      &lt;script type="text/javascript"&gt;
+         &lt;!--
+            var count = 0;
+            
+            document.write("Starting Loop" + "&lt;br /&gt;");
+            do{
+               document.write("Current Count : " + count + "&lt;br /&gt;");
+               count++;
+            }
+            
+            while (count &lt; 5);
+            document.write ("Loop stopped!");
+         //--&gt;
+      &lt;/script&gt;
+      
+      &lt;p&gt;Set the variable to different value and then try...&lt;/p&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre> 
+    <h3>Output</h3> 
+    <pre class="result notranslate" style="white-space:pre-wrap;">
+Starting Loop
+Current Count : 0 
+Current Count : 1 
+Current Count : 2 
+Current Count : 3 
+Current Count : 4
+Loop Stopped!
+Set the variable to different value and then try...
+</pre> 
+    <!-- PRINTING ENDS HERE --> 
+   </div> 
+  </div>
+ </body>
+</html>
